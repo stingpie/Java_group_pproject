@@ -1,15 +1,13 @@
 package group_array_project;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
 
 public class FileGenerator{
-    public static void makeTextFile(int width, int height){
-          File file = new File("matrix.txt");  
+    public static void makeTextFile(int width, int height, String path){
         try{
-            FileWriter writeto = new FileWriter("matrix.txt",false);
+            FileWriter writeto = new FileWriter(path,false);
             int[][]arr = RandomizeArray(width,height);
             for(int i=0;i<arr.length;i++){
                 for(int j=0;j<arr[0].length;j++){
