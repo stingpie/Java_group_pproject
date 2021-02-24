@@ -1,8 +1,8 @@
 package group_array_project;
 
 public interface TxtLoader {
-	public String fileAddress="";
-	public String textFromFile="";
+	//public String fileAddress=""; //IMPLEMENT THESE
+	//public String textFromFile="";  
 	
 	public abstract void readTxt() ;
 	
