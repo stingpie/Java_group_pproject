@@ -1,6 +1,12 @@
-// package group_array_project;
+package group_array_project;
 // import java.io.FileReader;
 // import group_array_project.FileGenerator;
+
+public class TxtLoader {
+    public static String loadTxt(String path) {
+        // todo: load file
+    }
+}
 
 // public interface TxtLoader {
 // 	//public String fileAddress=""; //IMPLEMENT THESE
