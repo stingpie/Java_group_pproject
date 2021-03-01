@@ -3,7 +3,7 @@ package group_array_project;
 public class Main {
 
 	int[][] mat;
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		//String[] testArgs = {"gen", "testmat.txt", "10", "10"};
 		//args = testArgs;
@@ -22,7 +22,9 @@ public class Main {
 			FileGenerator.makeTextFile(width, height, args[1]);
 		} else if (hasArg(args, "solve")) {
 
-			StringToArray.convert(TxtLoader.loadTxt(args[1]), "\n", " ");
+			MatrixParser matrixParser = new MatrixParser();
+
+			matrixParser.convert(TxtLoader.loadTxt(args[1]), "\n", " ");
 			// solve a matrix
 
 		} else {
