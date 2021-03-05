@@ -5,8 +5,8 @@ public class Main {
 	int[][] mat;
 	public static void main(String[] args) throws Exception {
 
-		//String[] testArgs = {"gen", "testmat.txt", "10", "10"};
-		//args = testArgs;
+		String[] testArgs = {"solve", "testmat.txt"};
+		args = testArgs;
 
 		if (hasArg(args, "gen")) {
 
@@ -22,10 +22,12 @@ public class Main {
 			FileGenerator.makeTextFile(width, height, args[1]);
 		} else if (hasArg(args, "solve")) {
 
-			MatrixParser matrixParser = new MatrixParser();
+			StringToArray matrixParser = new StringToArray();
 
-			matrixParser.convert(TxtLoader.loadTxt(args[1]), "\n", " ");
+			int[][] mat = matrixParser.convert(TxtLoader.getTextFromFile(args[1]), "\n", " ");
 			// solve a matrix
+
+			TileWalkerRecursive.findCheapestPath(mat);
 
 		} else {
 			System.out.println("usage: app_name [gen|solve] file [?width] [?height]");
