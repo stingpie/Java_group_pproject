@@ -18,13 +18,13 @@ For convenience, we've already compiled the code and put it in `Project.jar`
 ## UML diagram
 
 ## `FileGenerator`
-![FileGenerator](uml\filegenerator.jpg)
+![FileGenerator](uml/filegenerator.jpg)
 
 ## `StringToArray`
-![StringToArray](uml\stringtoarray.jpg)
+![StringToArray](uml/stringtoarray.jpg)
 
 ## `TileStepper`
-![TileStepper](uml\tilestepper.jpg)
+![TileStepper](uml/tilestepper.jpg)
 
 ## `TxtLoader`
-![TxtLoader](uml\txtloader.jpg)
+![TxtLoader](uml/txtloader.jpg)
