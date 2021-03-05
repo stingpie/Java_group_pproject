@@ -3,9 +3,17 @@ package group_array_project;
 import java.util.Arrays;
 
 public class TileWalker implements TileStepper{
-
-	boolean debug=true;
+	// this was an attempt at implementing A* pathfinding. 
+	// seperated into two functions, it was meant to find new paths off of the 'confirmed' path,
+	// and then search through those possible paths to find the cheapest one. 
+	// however, once the first method was done, half of the class had been used up, and I got too
+	// exhausted to work on another indepth method. 
+	// this class has been superseeded by tileWalkerRecursive, which isn't actually recursive. 
 	
+	
+
+	boolean debug=false; // only used for debug
+	// setup various variables.
 	public int[] pos= {0,0};
 	public int[][] confirmedSteps= new int[1][3];
 	public int[] confirmedCosts = new int[1];
@@ -29,24 +37,25 @@ public class TileWalker implements TileStepper{
 			for(int j=0; j<offset.length;j++) { // look at the surrounding tiles
 				boolean isItNew=true;
 				
-				int[] newTest= {confirmedSteps[i][0]+offset[j][0],confirmedSteps[i][1]+offset[j][1] };
+				int[] newTest= {confirmedSteps[i][0]+offset[j][0],confirmedSteps[i][1]+offset[j][1] }; //make an array of the x & y values. 
 				
-				 for(int z=0; z<testSteps.length;z++) {
-					if(testSteps[z].equals(newTest)) {
+				 for(int z=0; z<testSteps.length;z++) { 
+					if(testSteps[z].equals(newTest)) {  // test to see if this 'new' path is already explored
 						isItNew=false;
 						break;
-					}
+					} 
 				 }
 				 if(isItNew) {
 					 for(int z=0; z<confirmedSteps.length;z++) {
-						if( confirmedSteps[z].equals(newTest)) {
+						if( confirmedSteps[z].equals(newTest)) {// test to see if this 'new' path is already explored
 							isItNew=false;
 							break;
 						}
 					 }
 				 }
 				 
-				 if(isItNew) {
+				 if(isItNew) { // if it hasn't been explored, 
+					 // add it to the end of the testSteps array. 
 					testSteps=Arrays.copyOf(testSteps, testSteps.length+1);
 					testSteps[testSteps.length-1]=newTest;
 					
@@ -63,7 +72,7 @@ public class TileWalker implements TileStepper{
 		System.out.println(testSteps.length);
 	}
 	
-	public void testPossibleSteps() {
+	public void testPossibleSteps() { // intended to be used to calculate the cost of each tile. 
 		for(int i=0; i<testSteps.length; i++) {
 			
 		}
