@@ -14,3 +14,17 @@ For convenience, we've already compiled the code and put it in `Project.jar`
 	```bash
 	java -jar Project.jar solve mat.txt
 	```
+
+## UML diagram
+
+## `FileGenerator`
+![FileGenerator](uml\filegenerator.jpg)
+
+## `StringToArray`
+![StringToArray](uml\stringtoarray.jpg)
+
+## `TileStepper`
+![TileStepper](uml\tilestepper.jpg)
+
+## `TxtLoader`
+![TxtLoader](uml\txtloader.jpg)
