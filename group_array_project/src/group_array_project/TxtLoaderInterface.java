@@ -1,8 +1,8 @@
 package group_array_project;
 
 public interface TxtLoaderInterface{
-    public String fileAddress="";
-    public String textFromFile=""; 
+    public String fileAddress=""; // file path
+    public String textFromFile=""; // file text contents
     
-    public String getTextFromFile() throws Exception;
+    public String getTextFromFile() throws Exception; // get the text contents of a file
 }

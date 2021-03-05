@@ -3,6 +3,10 @@ package group_array_project;
 public class Main {
 	public static void main(String[] args) throws Exception {
 
+		if (args.length == 0) {
+			System.out.println("usage: app_name [gen|solve] file_path"); // if neither argument is present, print the help
+		}
+
 		if (args[0].equalsIgnoreCase("gen")) { // if the command-line arguments contain the "generate" parameter
 
 			int width = 5, height = 5; // define the width and height as five
@@ -11,7 +15,7 @@ public class Main {
 			
 			FileGenerator.makeTextFile(width, height, args[1]); // generate a new 5x5 matrix into the path passed to the program
 
-		} else if (args[0].equalsIgnoreCase("silve")) { // if the command-line arguments contain the "solve" parameter
+		} else if (args[0].equalsIgnoreCase("solve")) { // if the command-line arguments contain the "solve" parameter
 
 			StringToArray matrixParser = new StringToArray(); // instantiate the matrix parser
 
